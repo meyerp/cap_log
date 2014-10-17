@@ -1,0 +1,33 @@
+p#notice
+  = notice
+p
+  strong
+    | Fullname:
+  = @message.fullname
+p
+  strong
+    | Email:
+  = @message.email
+p
+  strong
+    | Country:
+  = @message.country
+p
+  strong
+    | Phone number:
+  = @message.phone_number
+p
+  strong
+    | Company:
+  = @message.company
+p
+  strong
+    | Object:
+  = @message.object
+p
+  strong
+    | Content:
+  = @message.content
+= link_to 'Edit', edit_message_path(@message)
+|  | 
+= link_to 'Back', messages_path

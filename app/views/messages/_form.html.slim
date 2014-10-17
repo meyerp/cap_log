@@ -1,0 +1,47 @@
+= form_for(@message) do |f|
+  - if @message.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@message.errors.count, "error")
+        |  prohibited this message from being saved:
+      ul
+        - @message.errors.full_messages.each do |message|
+          li
+            = message
+  .row
+    .large-6.columns
+      = f.label :fullname
+      = f.text_field :fullname
+
+    .large-6.columns
+      = f.label :email
+      = f.text_field :email
+
+  .row
+    .large-4.columns
+      = f.label :country
+      = f.text_field :country
+
+    .large-4.columns
+      = f.label :phone_number
+      = f.text_field :phone_number
+
+    .large-4.columns
+      = f.label :company
+      = f.text_field :company
+
+  .row
+    .large-12.columns
+      = f.label :object
+      = f.text_field :object
+
+  .row
+    .large-12.columns
+      = f.label :content
+      = f.text_field :content
+
+  .row
+    .actions
+      .large-12.columns
+       = f.button :submit
+        | Envoyer
