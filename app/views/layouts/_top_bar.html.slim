@@ -10,22 +10,38 @@ nav.top-bar[data-topbar role="navigation" data-options="is_hover: false"]
           | Menu
   section.top-bar-section
     ul.right
-      li
-        a[href="/"]
-          | Solution d'externalisation de logistique
-      li
-        a[href=new_message_path]
-          | Nous contacter
 
-      li.has-dropdown
-        a[href="#"]
-          | Espace Membre
-        ul.dropdown
+      - if user_signed_in?
           li
-            a[href="#"]
-              | Accéder à son compte Cap
-          li
-            a[href="#"]
-              | Nouveau compte
+            a[href=new_message_path]
+              | Dashboard
 
-    
+
+          li.has-dropdown
+            a[href="#"]
+              | Mon compte
+            ul.dropdown
+              li
+                = link_to "Paramètres du compte", edit_user_registration_path
+
+              li
+                = link_to "Se déconnecter", destroy_user_session_path, method: :delete
+      -else
+
+        li
+          a[href="/"]
+            | Solution d'externalisation de logistique
+        li
+          a[href=new_message_path]
+            | Nous contacter
+
+        li.has-dropdown
+          a[href="#"]
+            | Espace Membre
+          ul.dropdown
+            li
+              a[href=new_user_session_path]
+                | Accéder à son compte Cap
+            li
+              a[href=new_user_registration_path]
+                | Nouveau compte
