@@ -1,0 +1,52 @@
+= form_for(@product) do |f|
+  - if @product.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@product.errors.count, "error")
+        |  prohibited this product from being saved:
+      ul
+        - @product.errors.full_messages.each do |message|
+          li
+            = message
+  .row
+    .columns.small-12
+      .row.collapse
+        = f.label :product_name
+        = f.text_field :product_name
+
+      .row.collapse
+        = f.label :product_category
+        = f.text_field :product_category
+
+      .row.collapse
+        = f.label :product_subcategory
+        = f.text_field :product_subcategory
+
+      .row.collapse
+        = f.label :product_alone_volume
+        = f.text_field :product_alone_volume
+
+      .row.collapse
+        = f.label :products_batch_volume
+        = f.text_field :products_batch_volume
+
+      .row.collapse
+        = f.label :amount_per_batch
+        = f.number_field :amount_per_batch
+
+      .row.collapse
+        = f.label :product_alone_mass
+        = f.text_field :product_alone_mass
+
+      .row.collapse
+        = f.label :products_batch_mass
+        = f.text_field :products_lot_mass
+
+      .row.collapse
+        = f.label :product_reference
+        = f.text_field :product_reference
+
+      .row.collapse
+        .actions
+          = f.button :submit
+            | Valider

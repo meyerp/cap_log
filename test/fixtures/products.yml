@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  product_category: MyString
+  product_subcategory: MyString
+  product_alone_volume: 9.99
+  products_batch_volume: 9.99
+  amount_per_batch: 1
+  product_alone_mass: MyString
+  products_lot_mass: MyString
+  product_reference: MyString
+
+two:
+  product_name: MyString
+  product_category: MyString
+  product_subcategory: MyString
+  product_alone_volume: 9.99
+  products_batch_volume: 9.99
+  amount_per_batch: 1
+  product_alone_mass: MyString
+  products_lot_mass: MyString
+  product_reference: MyString
