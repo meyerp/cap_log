@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020105710) do
+ActiveRecord::Schema.define(version: 20141020150706) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20141020105710) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "messages", force: true do |t|
@@ -43,22 +47,22 @@ ActiveRecord::Schema.define(version: 20141020105710) do
   end
 
   create_table "products", force: true do |t|
-    t.string   "product_name"
-    t.string   "product_category"
-    t.string   "product_subcategory"
-    t.decimal  "product_alone_volume"
-    t.decimal  "products_batch_volume"
+    t.string   "name"
+    t.string   "category"
+    t.string   "subcategory"
+    t.decimal  "alone_volume"
+    t.decimal  "batch_volume"
     t.integer  "amount_per_batch"
-    t.string   "product_alone_mass"
-    t.string   "products_lot_mass"
-    t.string   "product_reference"
+    t.string   "alone_mass"
+    t.string   "batch_mass"
+    t.string   "reference"
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "product_picture_file_name"
-    t.string   "product_picture_content_type"
-    t.integer  "product_picture_file_size"
-    t.datetime "product_picture_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "users", force: true do |t|

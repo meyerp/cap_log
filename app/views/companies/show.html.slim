@@ -2,6 +2,9 @@
     p#notice
       = notice
 
+
+    = image_tag @company.logo.url(:medium)
+
     p
       strong
         | Id:
@@ -56,4 +59,3 @@
         | Website:
       = @company.website
     = link_to 'Edit', edit_company_path(@company), class: "button success"
-  

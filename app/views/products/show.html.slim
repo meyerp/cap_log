@@ -1,56 +1,54 @@
 .row
-  .columns.small-12
-    .row.collapse
-      p#notice
+    p#notice
       = notice
-    .row.collapse
-      = image_tag @product.product_picture.url(:medium)
-    .row.collapse
-      p
-        strong
-          | Product name:
-        = @product.product_name
-    .row.collapse
-      p
-        strong
-          | Product category:
-        = @product.product_category
-    .row.collapse
-      p
-        strong
-          | Product subcategory:
-        = @product.product_subcategory
-    .row.collapse
-      p
-        strong
-          | Product alone volume:
-        = @product.product_alone_volume
-    .row.collapse
-      p
-        strong
-          | Products batch volume:
-        = @product.products_batch_volume
-    .row.collapse
-      p
-        strong
-          | Amount per batch:
-        = @product.amount_per_batch
-    .row.collapse
-      p
-        strong
-          | Product alone mass:
-        = @product.product_alone_mass
-    .row.collapse
-      p
-        strong
-          | Products lot mass:
-        = @product.products_lot_mass
-    .row.collapse
-      p
-        strong
-          | Product reference:
-        = @product.product_reference
-    .row.collapse
-      = link_to 'Edit', edit_product_path(@product), class: "button success"
-      |
-      = link_to 'Back', products_path, class: "button success"
+
+
+    = image_tag @product.picture.url(:medium)
+
+
+    p
+      strong
+        | Name:
+      = @product.name
+
+    p
+      strong
+        | Category:
+      = @product.category
+
+    p
+      strong
+        | Subcategory:
+      = @product.subcategory
+    p
+      strong
+        | Alone volume:
+      = @product.alone_volume
+
+    p
+      strong
+        | Batch volume:
+      = @product.batch_volume
+    p
+      strong
+        | Amount per batch:
+      = @product.amount_per_batch
+
+    p
+      strong
+        | Alone mass:
+      = @product.alone_mass
+
+    p
+      strong
+        | Batch mass:
+      = @product.batch_mass
+
+    p
+      strong
+        | Reference:
+      = @product.reference
+
+    = link_to 'Edit', edit_product_path(@product), class: "button success"
+    |
+    = link_to 'Back', products_path, class: "button success"

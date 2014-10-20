@@ -11,6 +11,8 @@
   .row
     .small-6.columns
       .field
+        = f.file_field :logo
+
         = f.label :name
         br
         = f.text_field :name
@@ -59,5 +61,4 @@
         br
         = f.text_field :website
       .actions
-        = f.button :submit
-          | Valider
+        = f.submit

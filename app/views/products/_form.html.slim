@@ -11,46 +11,45 @@
   .row
     .columns.small-12
       .row.collapse
-        = f.file_field :product_picture
-        
+        = f.file_field :picture
+
 
       .row.collapse
-        = f.label :product_name
-        = f.text_field :product_name
+        = f.label :name
+        = f.text_field :name
 
       .row.collapse
-        = f.label :product_category
-        = f.text_field :product_category
+        = f.label :category
+        = f.text_field :category
 
       .row.collapse
-        = f.label :product_subcategory
-        = f.text_field :product_subcategory
+        = f.label :subcategory
+        = f.text_field :subcategory
 
       .row.collapse
-        = f.label :product_alone_volume
-        = f.text_field :product_alone_volume
+        = f.label :alone_volume
+        = f.text_field :alone_volume
 
       .row.collapse
-        = f.label :products_batch_volume
-        = f.text_field :products_batch_volume
+        = f.label :batch_volume
+        = f.text_field :batch_volume
 
       .row.collapse
         = f.label :amount_per_batch
         = f.number_field :amount_per_batch
 
       .row.collapse
-        = f.label :product_alone_mass
-        = f.text_field :product_alone_mass
+        = f.label :alone_mass
+        = f.text_field :alone_mass
 
       .row.collapse
-        = f.label :products_batch_mass
-        = f.text_field :products_lot_mass
+        = f.label :batch_mass
+        = f.text_field :batch_mass
 
       .row.collapse
-        = f.label :product_reference
-        = f.text_field :product_reference
+        = f.label :reference
+        = f.text_field :reference
 
       .row.collapse
         .actions
-          = f.button :submit
-            | Valider
+        = f.submit

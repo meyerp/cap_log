@@ -34,34 +34,33 @@ table
     - @products.each do |product|
       tr
         td
-          = image_tag product.product_picture.url
+          = image_tag product.picture.url
         td
-          = product.product_name
+          = product.name
         td
-          = product.product_category
+          = product.category
         td
-          = product.product_subcategory
+          = product.subcategory
         td
-          = product.product_alone_volume
+          = product.alone_volume
         td
-          = product.products_batch_volume
+          = product.batch_volume
         td
           = product.amount_per_batch
         td
-          = product.product_alone_mass
+          = product.alone_mass
         td
-          = product.products_lot_mass
+          = product.batch_mass
         td
-          = product.product_reference
-
+          = product.reference
         td
           = product.company_id
 
         td
-          = link_to 'Show', product, class: "button success"
+          = link_to 'Show', product
         td
-          = link_to 'Edit', edit_product_path(product), class: "button success"
+          = link_to 'Edit', edit_product_path(product)
         td
-          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "button success"
+          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
 br
 = link_to 'New Product', new_product_path, class: "button success"

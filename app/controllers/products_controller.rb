@@ -1,13 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
- respond_to :html, :xml, :js
+respond_to :html, :xml, :js
 
   def index
-    @company_id = current_user.company_id
-    # @products = products.find(params[:@company_id])
-    @products = Product.all
+    @products = current_user.company.products
     respond_with(@products)
   end
 
@@ -17,7 +15,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.company_id = current_user.company_id
+
     respond_with(@product)
   end
 
@@ -26,6 +24,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.company_id = current_user.company_id
     @product.save
     respond_with(@product)
   end
@@ -38,23 +37,14 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_with(@product)
-
-  end
-
-  def destroy_picture
-    @product.product_picture = nil
-    @product.save
   end
 
   private
     def set_product
-      # @company_id = current_user.company_id
-      # @products = products.find(params[:@company_id])
-      @products = Products.All
-
+      @product = Product.find(params[:id])
     end
 
     def product_params
-      params.require(:product).permit(:product_picture, :product_name, :product_category, :product_subcategory, :product_alone_volume, :products_batch_volume, :amount_per_batch, :product_alone_mass, :products_lot_mass, :product_reference)
+      params.require(:product).permit(:picture, :name, :category, :subcategory, :alone_volume, :batch_volume, :amount_per_batch, :alone_mass, :batch_mass, :reference)
     end
 end
