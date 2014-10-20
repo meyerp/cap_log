@@ -2,12 +2,6 @@ Rails.application.routes.draw do
 
 
 
-  get 'rails/g'
-
-  get 'rails/controller'
-
-  get 'rails/shipment'
-
   devise_for :users
   resources :messages
   resources :products
