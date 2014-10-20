@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019215157) do
+ActiveRecord::Schema.define(version: 20141019222436) do
 
   create_table "messages", force: true do |t|
     t.string   "fullname"
@@ -37,7 +37,12 @@ ActiveRecord::Schema.define(version: 20141019215157) do
     t.string   "product_reference"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "UserId"
     t.integer  "user_id"
+    t.string   "product_picture_file_name"
+    t.string   "product_picture_content_type"
+    t.integer  "product_picture_file_size"
+    t.datetime "product_picture_updated_at"
   end
 
   create_table "users", force: true do |t|

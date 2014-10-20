@@ -37,6 +37,12 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_with(@product)
+
+  end
+
+  def destroy_picture
+    @product.product_picture = nil
+    @product.save
   end
 
   private
@@ -45,6 +51,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:product_name, :product_category, :product_subcategory, :product_alone_volume, :products_batch_volume, :amount_per_batch, :product_alone_mass, :products_lot_mass, :product_reference)
+      params.require(:product).permit(:product_picture, :product_name, :product_category, :product_subcategory, :product_alone_volume, :products_batch_volume, :amount_per_batch, :product_alone_mass, :products_lot_mass, :product_reference)
     end
 end

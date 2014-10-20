@@ -4,6 +4,8 @@
       p#notice
       = notice
     .row.collapse
+      = image_tag @product.product_picture.url(:medium)
+    .row.collapse
       p
         strong
           | Product name:
@@ -50,5 +52,5 @@
         = @product.product_reference
     .row.collapse
       = link_to 'Edit', edit_product_path(@product), class: "button success"
-      |  
+      |
       = link_to 'Back', products_path, class: "button success"

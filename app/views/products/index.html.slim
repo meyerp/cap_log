@@ -6,6 +6,8 @@ table
   thead
     tr
       th
+        | Product Picture
+      th
         | Product name
       th
         | Product category
@@ -31,6 +33,8 @@ table
   tbody
     - @products.each do |product|
       tr
+        td
+          = image_tag product.product_picture.url
         td
           = product.product_name
         td
