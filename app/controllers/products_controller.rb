@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
  respond_to :html, :xml, :js
 
   def index
-    @products = current_user.products
+    @company_id = current_user.company_id
+    # @products = products.find(params[:@company_id])
+    @products = Product.all
     respond_with(@products)
   end
 
@@ -15,7 +17,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.user_id = current_user.id
+    @product.company_id = current_user.company_id
     respond_with(@product)
   end
 
@@ -24,7 +26,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.user_id = current_user.id
     @product.save
     respond_with(@product)
   end
@@ -47,7 +48,10 @@ class ProductsController < ApplicationController
 
   private
     def set_product
-      @product = current_user.products.find(params[:id])
+      # @company_id = current_user.company_id
+      # @products = products.find(params[:@company_id])
+      @products = Products.All
+
     end
 
     def product_params

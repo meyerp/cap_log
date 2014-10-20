@@ -11,16 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020094425) do
+ActiveRecord::Schema.define(version: 20141020105710) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "company_type"
     t.integer  "registration_number"
     t.string   "vat_number"
     t.string   "age"
     t.string   "size"
-    t.integer  "user_id"
     t.string   "address"
     t.string   "zip_code"
     t.string   "city"
@@ -53,10 +52,9 @@ ActiveRecord::Schema.define(version: 20141020094425) do
     t.string   "product_alone_mass"
     t.string   "products_lot_mass"
     t.string   "product_reference"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "UserId"
-    t.integer  "user_id"
     t.string   "product_picture_file_name"
     t.string   "product_picture_content_type"
     t.integer  "product_picture_file_size"

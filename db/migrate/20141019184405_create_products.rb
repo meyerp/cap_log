@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :product_alone_mass
       t.string :products_lot_mass
       t.string :product_reference
-
+      t.integer :company_id
       t.timestamps
     end
   end

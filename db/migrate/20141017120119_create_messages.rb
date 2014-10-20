@@ -8,7 +8,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :company
       t.string :object
       t.string :content
-
+      
       t.timestamps
     end
   end

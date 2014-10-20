@@ -1,0 +1,59 @@
+.row
+    p#notice
+      = notice
+
+    p
+      strong
+        | Id:
+      = @company.id
+
+    p
+      strong
+        | Name:
+      = @company.name
+    p
+      strong
+        | Company type:
+      = @company.company_type
+    p
+      strong
+        | Registration number:
+      = @company.registration_number
+    p
+      strong
+        | Vat number:
+      = @company.vat_number
+    p
+      strong
+        | Age:
+      = @company.age
+    p
+      strong
+        | Size:
+      = @company.size
+    p
+      strong
+        | Address:
+      = @company.address
+    p
+      strong
+        | Zip code:
+      = @company.zip_code
+    p
+      strong
+        | City:
+      = @company.city
+    p
+      strong
+        | Country:
+      = @company.country
+    p
+      strong
+        | Phone number:
+      = @company.phone_number
+    p
+      strong
+        | Website:
+      = @company.website
+    = link_to 'Edit', edit_company_path(@company), class: "button success"
+  

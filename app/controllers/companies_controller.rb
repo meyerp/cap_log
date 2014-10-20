@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @companies = Company.all
-    respond_with(@companies)
-  end
+  respond_to :html, :xml, :js
+
+
 
   def show
     respond_with(@company)
@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     respond_with(@company)
+
   end
 
   def edit
@@ -22,6 +23,8 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     @company.save
     respond_with(@company)
+    current_user.company_id = @company.id
+    current_user.save
   end
 
   def update
@@ -40,6 +43,6 @@ class CompaniesController < ApplicationController
     end
 
     def company_params
-      params.require(:company).permit(:name, :type, :registration_number, :vat_number, :age, :size, :user_id, :address, :zip_code, :city, :country, :phone_number, :website)
+      params.require(:company).permit(:name, :type, :registration_number, :vat_number, :age, :size, :address, :zip_code, :city, :country, :phone_number, :website)
     end
 end

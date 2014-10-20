@@ -2,12 +2,11 @@
 
 one:
   name: MyString
-  type: 
+  company_type: MyString
   registration_number: 1
   vat_number: MyString
   age: MyString
   size: MyString
-  user_id: 1
   address: MyString
   zip_code: MyString
   city: MyString
@@ -17,12 +16,11 @@ one:
 
 two:
   name: MyString
-  type: 
+  company_type: MyString
   registration_number: 1
   vat_number: MyString
   age: MyString
   size: MyString
-  user_id: 1
   address: MyString
   zip_code: MyString
   city: MyString

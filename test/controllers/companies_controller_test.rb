@@ -18,7 +18,7 @@ class CompaniesControllerTest < ActionController::TestCase
 
   test "should create company" do
     assert_difference('Company.count') do
-      post :create, company: { address: @company.address, age: @company.age, city: @company.city, country: @company.country, name: @company.name, phone_number: @company.phone_number, registration_number: @company.registration_number, size: @company.size, type: @company.type, user_id: @company.user_id, vat_number: @company.vat_number, website: @company.website, zip_code: @company.zip_code }
+      post :create, company: { address: @company.address, age: @company.age, city: @company.city, company_type: @company.company_type, country: @company.country, name: @company.name, phone_number: @company.phone_number, registration_number: @company.registration_number, size: @company.size, vat_number: @company.vat_number, website: @company.website, zip_code: @company.zip_code }
     end
 
     assert_redirected_to company_path(assigns(:company))
@@ -35,7 +35,7 @@ class CompaniesControllerTest < ActionController::TestCase
   end
 
   test "should update company" do
-    patch :update, id: @company, company: { address: @company.address, age: @company.age, city: @company.city, country: @company.country, name: @company.name, phone_number: @company.phone_number, registration_number: @company.registration_number, size: @company.size, type: @company.type, user_id: @company.user_id, vat_number: @company.vat_number, website: @company.website, zip_code: @company.zip_code }
+    patch :update, id: @company, company: { address: @company.address, age: @company.age, city: @company.city, company_type: @company.company_type, country: @company.country, name: @company.name, phone_number: @company.phone_number, registration_number: @company.registration_number, size: @company.size, vat_number: @company.vat_number, website: @company.website, zip_code: @company.zip_code }
     assert_redirected_to company_path(assigns(:company))
   end
 

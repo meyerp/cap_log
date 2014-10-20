@@ -6,28 +6,28 @@ table
   thead
     tr
       th
-        | Product Picture
+        | Picture
       th
-        | Product name
+        | Name
       th
-        | Product category
+        | Category
       th
-        | Product subcategory
+        | Subcategory
       th
-        | Product alone volume
+        | Alone volume
       th
-        | Products batch volume
+        | Batch volume
       th
         | Amount per batch
       th
-        | Product alone mass
+        | Alone mass
       th
-        | Products lot mass
+        | Batch mass
       th
-        | Product reference
+        | Reference
 
       th
-        | Product user
+        | Company_id
 
       th[colspan="3"]
   tbody
@@ -55,7 +55,7 @@ table
           = product.product_reference
 
         td
-          = product.user_id
+          = product.company_id
 
         td
           = link_to 'Show', product, class: "button success"
