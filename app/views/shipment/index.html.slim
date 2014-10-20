@@ -1,1 +1,15 @@
 = render 'layouts/sub_nav'
+
+
+.large-12.columns
+  label
+    | Acheminement des produits vers Cap Performance
+  .ul
+    .li
+      input#user_carrier[type="radio" name="carrier" value="of_user"]
+      label[for="user_carrier"]
+        | Je choisi moi-même mon transporteur / J'organise moi-même le transport
+    .li
+      input#cap_carrier[type="radio" name="carrier" value="of_cap"]
+      label[for="cap_carrier"]
+        | Je laisse Cap Performance me proposer un transporteur pour venir chercher mes produits
