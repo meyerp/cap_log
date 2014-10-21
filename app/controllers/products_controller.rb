@@ -41,7 +41,7 @@ respond_to :html, :xml, :js
 
   private
     def set_product
-      @product = Product.find(params[:id])
+      @product = current_user.company.products.find(params[:id])
     end
 
     def product_params
